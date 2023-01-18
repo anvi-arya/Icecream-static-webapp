@@ -1,0 +1,154 @@
+/*.DisplayOrder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}*/
+/*
+.Cust-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px;
+  border-color: blue;
+}
+.module1 {
+  display: flex;
+  background-color: blueviolet;
+  border: 3px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  margin-left: 32rem;
+  height: 420px;
+}
+
+.module2 {
+  display: flex;
+  background-color: blueviolet;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-color: black;
+  width: 27%;
+  height: 100%;
+  margin-left: 32rem;
+  margin-top: 4rem;
+  box-shadow: inset;
+}
+
+.container1 {
+  display: flex;
+  background-color: blueviolet;
+  border: 3px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2rem;
+  width: 30%;
+}
+
+.container2 {
+  display: flex;
+  background-color: blueviolet;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-color: black;
+  width: 30%px;
+  margin-bottom: 1rem;
+}
+
+.button2 {
+  margin-right: 1rem;
+  align-items: center;
+}
+
+#textbox1 {
+  margin-top: 25px;
+  margin-bottom: 2rem;
+}
+
+#box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: 1px;
+  justify-items: center;
+}
+*/
+body {
+  background-color: #8aa92e;
+}
+body::after {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: rgb(194, 161, 161);
+  z-index: -10;
+}
+
+h1 {
+  margin-top: 5rem;
+  font-size: 2.5rem;
+  color: aliceblue;
+}
+
+input {
+  margin-left: 40rem;
+  margin-top: 3rem;
+}
+
+#mylist {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  box-shadow: 2px;
+  font-size: large;
+  color: rgb(64, 13, 111);
+}
+#icecream {
+  /* background-color: red; */
+  font-size: 1.3rem;
+}
+/*
+font-size
+padding
+border
+border-radius
+background
+color
+box shadow
+*/
+.submit-button {
+  font-size: 1.1rem;
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+  background-color: dodgerblue;
+  color: white;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  transition: color 300ms ease;
+  cursor: pointer;
+}
+.submit-button:hover {
+  color: dodgerblue;
+  background-color: white;
+  border: 1px solid dodgerblue;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  font-size: 1.1rem;
+  padding: 0.75em 0.75em;
+  border-radius: 0.75em;
+  background-color: thistle;
+  width: 500px;
+  margin-left: 30rem;
+  margin-top: 2rem;
+}

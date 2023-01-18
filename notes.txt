@@ -1,0 +1,108 @@
+*** the CRUD operation of the API
+    
+    C- Create : To create new entry into endpoint
+    R- Read: To read data from endpoint
+    U- Update: To update data at endpoint
+    D- Delete: To delete data from endpoint
+
+**** CRUD
+    These operations are performed using HTTP methods like POST, GET, PUT, 
+    DELETET.To request data you need to call these methods as per the purpose,
+    for calling these methods we need three basic things which are header, 
+    endpoint, and parameter/body.
+
+
+
+
+           *** Let’s see how things will work when we will call these methods.
+                             - - - - - THIS IS FLUTTER LANGUAGE - - - - - - 
+
+          1. You want to show a list of flavors available on your server. Here you will use GET() :
+            endpoint -> /flavors
+            Future<List<Flavor>> getFlavors(){
+
+            var response = http.get(
+              Uri.parse("http://icecream.com/api/flavors"),
+              headers: <String, String>{
+                  'Content-Type': 'application/json; charset=UTF-8',
+               },
+              );
+             return jsonDecode(response.body);
+            }
+
+
+           Above code snippet is returning the list of flavors with id and its name.
+           response → [ { ‘id’ : 1 , ‘flavor’ : ‘vanila’} , { ‘id’ : 2, ‘flavor’ : ‘cranberry’ } , . . . ]
+
+
+
+
+2. Let’s say, new shipment is coming in for the parlor which have lots of new flavors. Here we will post those new flavors on server using POST() :
+endpoint →/flavors
+Future<List<Flavor>> createFlavors(String flavor){
+
+  var response = http.post(
+                Uri.parse("http://icecream.com/api/flavors"),
+                headers: <String, String>{
+                  'Content-Type': 'application/json; charset=UTF-8',
+                },
+                body: jsonEncode(<String, String>{
+                       "flavor" : flavor
+                }
+           );
+     return jsonDecode(response.body);
+}
+body →{‘flavor’ : ‘chocolate’}
+response → [ { ‘id’ : 1 , ‘flavor’ : ‘vanila’} , { ‘id’ : 2, ‘flavor’ : ‘cranberry’ } , {‘id’ : 3, ‘flavor’ : ‘mint chocolate’}, {‘id’ : 4, ‘flavor’ : ‘faluda’}, . . . ]
+This will create a new entry in the /flavors and response will be the new entries added.
+
+
+
+
+3. Let’s say one flavor is out of stock because of unseen demand so you may want to update that flavor with some other flavor. Here comes PUT() :
+endpoint -> /flavors
+Future<List<Flavor>> updateFlavors(int flavorID, String newFlavor){
+
+    var response = http.put(
+            Uri.parse(
+                  "http://icecream.com/api/flavors/$flavorID"
+            ),
+            headers: <String, String>{
+                  'Content-Type': 'application/json; charset=UTF-8',
+            },
+            body: jsonEncode(<String, String>{
+                  "flavor" : newFlavor
+            }
+         );
+    return jsonDecode(response.body);
+}
+response → [ { ‘id’ : 1 , ‘flavor’ : ‘vanila’} , { ‘id’ : 2, ‘flavor’ : ‘cranberry’ } , . . . ]
+This will create a new entry in the /flavors and response will the new entry be added.
+
+
+
+
+
+4. Let’s say now one flavor is not that popular and creating overhead for production and then you decided to shut it down. Here comes DELETE() :
+endpoint -> /flavors/$flavorID=1
+Future<List<Flavor>> deleteFlavors(int flavorID){
+
+      var response = http.delete(
+              Uri.parse(
+                  "http://icecream.com/api/flavors/$flavorID"
+              ),
+              headers: <String, String>{
+                  'Content-Type': 'application/json; charset=UTF-8',
+              },                 
+          );
+      return jsonDecode(response.body);
+}
+This will delete that particular flavor from your server.
+
+
+
+
+
+
+
+
